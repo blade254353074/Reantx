@@ -7,7 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const imageminMozjpeg = require('imagemin-mozjpeg')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const BabiliPlugin = require("babili-webpack-plugin")
+const BabiliPlugin = require('babili-webpack-plugin')
 
 /* Config */
 const urls = require('./urls')
