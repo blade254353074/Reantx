@@ -4,8 +4,8 @@
   "author": "Sebastian Blade <blade254353074@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node --debug webpack/dev.server.js",
-    "watch": "cross-env NODE_ENV=development webpack-dev-server --progress --profile --debug --watch --config webpack/conf.dev.js",
+    "dev": "cross-env NODE_ENV=development node --trace-warnings --trace-deprecation --inspect webpack/dev.server.js",
+    "watch": "cross-env NODE_ENV=development webpack-dev-server --progress --profile --bail --stdin -d --watch --config webpack/conf.dev.js",
     "build": "cross-env BABEL_ENV=production NODE_ENV=production webpack --config webpack/conf.prod.js",
     "lint": "standard --parser babel-eslint 'src/**/*.js src/**/*/jsx'",
     "precommit": "npm run lint"
@@ -33,7 +33,7 @@
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-2": "^6.22.0",
     "babili-webpack-plugin": "^0.0.11",
-    "cross-env": "^3.1.4",
+    "cross-env": "^3.2.3",
     "css-loader": "^0.26.2",
     "ejs-loader": "^0.3.0",
     "eslint": "^3.17.0",
