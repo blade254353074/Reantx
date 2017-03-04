@@ -9,7 +9,7 @@ const { publicPath } = webpackConfDev.entry
 const compiler = webpack(webpackConfDev)
 const server = new WebpackDevServer(compiler, {
   hot: true,
-  quiet: false,
+  quiet: true,
   publicPath,
   stats: {
     colors: true,

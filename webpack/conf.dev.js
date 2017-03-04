@@ -28,7 +28,7 @@ const webpackConf = merge(webpackConfBase, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
-    // new FzriendlyErrorsWebpackPlugin(),
+    new FriendlyErrorsWebpackPlugin(),
     new OpenBrowserPlugin({ url: `http://${host}:${port}` })
   ]
 })
