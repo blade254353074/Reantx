@@ -4,7 +4,8 @@
   "author": "Sebastian Blade <blade254353074@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node webpack/dev.server.js",
+    "dev": "cross-env NODE_ENV=development node --debug webpack/dev.server.js",
+    "watch": "cross-env NODE_ENV=development webpack-dev-server --progress --profile --debug --watch --config webpack/conf.dev.js",
     "build": "cross-env BABEL_ENV=production NODE_ENV=production webpack --config webpack/conf.prod.js",
     "lint": "standard --parser babel-eslint 'src/**/*.js src/**/*/jsx'",
     "precommit": "npm run lint"

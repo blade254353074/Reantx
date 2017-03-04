@@ -22,7 +22,7 @@ BUT [UglifyJsPlugin cannot optimize es6 code](https://webpack.js.org/plugins/ugl
 yarn
 ```
 
-# How to start
+## How to start
 
 For development:
 ```bash

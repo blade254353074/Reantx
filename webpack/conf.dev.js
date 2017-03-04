@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 
 /* Config */
-const host = '0.0.0.0'
+const host = 'localhost'
 const port = process.env.PORT || 8080
 const urls = require('./urls')
 const webpackConfBase = require('./conf.base')
@@ -28,7 +28,7 @@ const webpackConf = merge(webpackConfBase, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
-    new FriendlyErrorsWebpackPlugin(),
+    // new FzriendlyErrorsWebpackPlugin(),
     new OpenBrowserPlugin({ url: `http://${host}:${port}` })
   ]
 })

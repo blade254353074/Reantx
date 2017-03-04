@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
 
-const host = '0.0.0.0'
+const host = 'localhost'
 const port = process.env.PORT || 8080
 const webpackConfDev = require('./conf.dev')
 const { publicPath } = webpackConfDev.entry
@@ -9,7 +9,7 @@ const { publicPath } = webpackConfDev.entry
 const compiler = webpack(webpackConfDev)
 const server = new WebpackDevServer(compiler, {
   hot: true,
-  quiet: true,
+  quiet: false,
   publicPath,
   stats: {
     colors: true,
