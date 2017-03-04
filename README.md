@@ -16,6 +16,11 @@ BUT [UglifyJsPlugin cannot optimize es6 code](https://webpack.js.org/plugins/ugl
 
 [https://github.com/webpack/webpack/issues/4421](https://github.com/webpack/webpack/issues/4421)
 
+> Warning:  
+open-browser-webpack-plugin v0.0.4 has bug. It cause recompiling stucked.
+Must ensure the version is locked to v0.0.3 to prevent the problem.
+https://github.com/baldore/open-browser-webpack-plugin/issues/18
+
 ## Installation
 
 ```bash
