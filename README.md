@@ -7,12 +7,13 @@ webpack 2.2.1
 React React-Router Mobx AntDesign
 
 > Note:  
-Because this project use babel-preset-env, and target is chrome 52, the transformed code will be es6 syntax.  
+Because this project using babel-preset-env, and the target is chrome 52, the transformed code will be es6 syntax.  
 BUT [UglifyJsPlugin cannot optimize es6 code](https://webpack.js.org/plugins/uglifyjs-webpack-plugin/#install). So I changed optimize plugin to [babili](https://github.com/babel/babili).
 
 ## Still has some problem
 
 [https://github.com/timoxley/standard-loader/pull/78](https://github.com/timoxley/standard-loader/pull/78)
+
 [https://github.com/webpack/webpack/issues/4421](https://github.com/webpack/webpack/issues/4421)
 
 ## Installation
