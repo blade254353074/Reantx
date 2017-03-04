@@ -2,9 +2,9 @@ const webpack = require('webpack')
 
 /* Plugins */
 const autoprefixer = require('autoprefixer')
+const HappyPack = require('happypack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const styles = require('./styles')
 
 /* vars */
@@ -59,11 +59,8 @@ module.exports = {
       }
     }, {
       test: /\.jsx?$/,
-      loader: 'babel-loader',
-      exclude,
-      options: {
-        cacheDirectory: true
-      }
+      loader: 'happypack/loader',
+      exclude
     },
       ...styles.style({ sourceMap: !prod, extract: prod }),
     {
@@ -97,12 +94,15 @@ module.exports = {
         postcss: postcssPlugins
       }
     }),
+    new HappyPack({
+      loaders: [ 'babel-loader?cacheDirectory' ],
+      tempDir: '.temp/.happypack/'
+    }),
     new webpack.ProvidePlugin({
       React: 'react'
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['manifest', 'libs', 'vendor'].reverse(),
-      // minChunks: Infinity
+      names: ['manifest', 'libs', 'vendor'].reverse()
     }),
     new InlineManifestWebpackPlugin(),
     ...entries.htmls.map(conf => new HtmlWebpackPlugin(conf))
